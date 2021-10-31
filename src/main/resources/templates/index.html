@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+
+        .d,.a,.b,.c{
+
+            width: 25%;
+
+            height: 10%;
+
+            border:1px solid #ccc;
+
+            float: left;
+
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+<body>
+<h1>首页</h1><br>
+<div class="a">
+    <h4>l1</h4>
+    <a th:href="@{/l1/1}" >1</a><br>
+    <a th:href="@{/l1/2}" >2</a><br>
+    <a th:href="@{/l1/3}" >3</a><br>
+</div>
+<div class="b">
+    <h4>l2</h4>
+    <a th:href="@{/l2/1}" >1</a><br>
+    <a th:href="@{/l2/2}" >2</a><br>
+    <a th:href="@{/l2/3}" >3</a><br>
+</div>
+<div class="c">
+    <h4>l3</h4>
+    <a th:href="@{/l3/1}" >1</a><br>
+    <a th:href="@{/l3/2}" >2</a><br>
+    <a th:href="@{/l3/3}" >3</a><br>
+</div>
+<a class="d" th:href="@{/login}">登录</a>
+</body>
+</html>
