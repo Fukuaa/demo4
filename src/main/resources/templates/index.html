@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
@@ -22,24 +22,36 @@
 </head>
 <body>
 <h1>首页</h1><br>
-<div class="a">
+<div class="a" sec:authorize="hasRole('vip1')">
     <h4>l1</h4>
     <a th:href="@{/l1/1}" >1</a><br>
     <a th:href="@{/l1/2}" >2</a><br>
     <a th:href="@{/l1/3}" >3</a><br>
 </div>
-<div class="b">
+<div class="b" sec:authorize="hasRole('vip2')">
     <h4>l2</h4>
     <a th:href="@{/l2/1}" >1</a><br>
     <a th:href="@{/l2/2}" >2</a><br>
     <a th:href="@{/l2/3}" >3</a><br>
 </div>
-<div class="c">
+<div class="c" sec:authorize="hasRole('vip3')">
     <h4>l3</h4>
     <a th:href="@{/l3/1}" >1</a><br>
     <a th:href="@{/l3/2}" >2</a><br>
     <a th:href="@{/l3/3}" >3</a><br>
 </div>
-<a class="d" th:href="@{/login}">登录</a>
+<div sec:authorize="!isAuthenticated()">
+    <a class="d" th:href="@{/login}">登录</a>
+</div>
+<!--<div sec:authorize="isAuthenticated()">
+    <a>
+        用户名：<span sec:authentication="name"></span>
+        角色：<span sec:authentication="principal.getAuthorities()"></span>
+    </a>
+</div>-->
+<div sec:authorize="isAuthenticated()">
+    <a class="d" th:href="@{/logout}">注销</a>
+</div>
+
 </body>
 </html>
