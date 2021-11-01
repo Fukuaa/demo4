@@ -23,8 +23,11 @@ public class s extends WebSecurityConfigurerAdapter {
                 .antMatchers("/l3/**")
                 .hasRole("vip3");
         //没有权限到登录页
-        http.formLogin();
+        //http.formLogin().loginPage("/login");//定制登录页
         http.logout().logoutSuccessUrl("/");
+        http.formLogin();
+        http.rememberMe();
+        //http.rememberMe().rememberMeParameter("remember");从前端接受记住我
     }
     //认证
 
