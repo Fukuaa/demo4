@@ -1,4 +1,3 @@
-/*
 package com.example.demo.config;
 
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -46,4 +45,3 @@ public class s extends WebSecurityConfigurerAdapter {
                 .roles("vip1","vip2","vip3");
     }
 }
-*/
