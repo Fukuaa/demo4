@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,4 +28,8 @@ public class rcontroller {
     public String l3(@PathVariable("id") int id){
         return "views/l3/"+id;
     }
+    /*@GetMapping("/403")
+    public String show403() {
+        return "403";
+    }*/
 }
